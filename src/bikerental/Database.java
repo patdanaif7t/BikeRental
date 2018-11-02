@@ -93,10 +93,6 @@ public class Database {
      public static FindIterable<Document> findAll(MongoCollection<Document> col) {
         return collection.find();
     }
-
-//    Document find(String id, int id0) {
-//        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-//    }
     
 
      
