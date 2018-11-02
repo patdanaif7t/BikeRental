@@ -6,8 +6,10 @@
 package bikerental;
 
 import com.google.gson.Gson;
+import com.mongodb.client.FindIterable;
 import com.mongodb.client.MongoCollection;
 import static com.mongodb.client.model.Filters.eq;
+import java.util.ArrayList;
 import org.bson.Document;
 
 /**
@@ -36,11 +38,14 @@ public class CustomerDao {
         return cusCol.find(eq("cusCitizenNumber", cusCitizenNumber)).first();
     }
     
+    public FindIterable<Customer> getCusAll() {
+        return cusCol.find();
+    }
+    
     public boolean editCustomer(Customer customer, Customer newCustomer) {
         Gson gson = new Gson();
         Document oldCus = Document.parse(gson.toJson(customer));
         Document newCus = Document.parse(gson.toJson(newCustomer));
-
         try {
             cusCol.updateOne(oldCus, newCus);
             return true;
