@@ -5,57 +5,49 @@
  */
 package bikerental;
 
+import org.bson.types.ObjectId;
+
 /**
  *
  * @author anupongpummok
  */
-public class Customer {
-    String cusCitizenId;
-    String cusTel;
-    String cusFName;
-    String cusLName;
+public final class Customer {
+    private ObjectId cusCitizenId;
+    private String cusTel;
+    private String cusFName;
+    private String cusLName;
 
-    public Customer(String cusCitizenId, String cusFName, String cusLName,String cusTel) {
-        this.cusCitizenId = cusCitizenId;
-        this.cusTel = cusTel;
-        this.cusFName = cusFName;
-        this.cusLName = cusLName;
-    }
-    
-
-    public String getCitizenId() {
+    public ObjectId getCusCitizenId() {
         return cusCitizenId;
     }
 
-    public void setCitizenId(String id) {
-        this.cusCitizenId = id;
+    public void setCusCitizenId(final ObjectId cusCitizenId) {
+        this.cusCitizenId = cusCitizenId;
     }
 
-    public String getTel() {
+    public String getCusTel() {
         return cusTel;
     }
 
-    public void setTel(String phoneNumber) {
-        this.cusTel = phoneNumber;
+    public void setCusTel(final String cusTel) {
+        this.cusTel = cusTel;
     }
 
-    public String getFName() {
+    public String getCusFName() {
         return cusFName;
     }
 
-    public void setFName(String fname) {
-        this.cusFName = fname;
+    public void setCusFName(final String cusFName) {
+        this.cusFName = cusFName;
     }
 
-    public String getLName() {
+    public String getCusLName() {
         return cusLName;
     }
 
-    public void setLName(String lname) {
-        this.cusLName = lname;
+    public void setCusLName(final String cusLName) {
+        this.cusLName = cusLName;
     }
-    
-     
     
     
 }
